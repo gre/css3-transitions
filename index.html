@@ -72,7 +72,7 @@
         section { -webkit-transition-property: -webkit-transform, opacity; -webkit-transition-duration: 1s, 1s; pointer-events: none; -webkit-box-sizing: border-box; }
         section h1, section h2, section h3, section p { text-align: center; margin: .3em; margin: 0; padding: 0; }
         section[aria-selected] { opacity: 1; pointer-events: auto; -moz-transition-delay: 1s, 1s; -webkit-transition-delay: 1s, 1s; }
-        pre { font-size: 35px; border-left: 6px solid white; padding-left: 10px; white-space: pre-wrap;       /* css-3 */ word-wrap: break-word;       /* Internet Explorer 5.5+ */ line-height: 1.3em; } 
+        pre { border-left: 6px solid white; padding-left: 10px; white-space: pre-wrap;       /* css-3 */ word-wrap: break-word;       /* Internet Explorer 5.5+ */ line-height: 1.3em; } 
         a { color: white!important; text-decoration: none; }
 
         /*
@@ -82,7 +82,17 @@
         *                                  *
         ************************************
         */
-             
+        
+        a {
+          text-decoration: underline;
+        }
+        
+        iframe {
+          overflow: hidden;
+          border: 1px solid black;
+          -moz-box-shadow: 0px 0px 10px black;
+        }
+        
         section h1, section h2, section p {
           margin: 5px 0;
         }
@@ -115,7 +125,6 @@
         section {
           font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
           font-size: 100%;
-          text-shadow: 0px -2px 0px #374683;
           color: white;
         }
 
@@ -140,7 +149,23 @@
           -moz-transform: translate(100%, 0);
           -webkit-transform: translate(100%, 0);
         }
-
+        
+        
+        .exemple {
+          display: table;
+          margin: 20px;
+        }
+        
+        .exemple .demo {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          padding: 50px;
+        }
+        .exemple pre {
+          display: table-cell;
+        }
+        
       </style>
     </head>
 
@@ -159,23 +184,216 @@
     </section>
     
     <section>
+      <h1>Animer un site web ?</h1>
+      <h2>Quel intérêt ?</h2>
+      <p>
+      Les animations apportent une dynamique à une application web.<br/>
+      Ils impressionnent et augmentent la qualité d'une Interface Utilisateur.
+      </p>
+      <!--
+      <h2>Mais attention aux abus</h2>
+      <p>Il ne s'agit pas de faire des sites guirlandes à l'instar des sites GIF des années 2000 !</p>
+      -->
+    </section>
+    
+    <section>
+      <h1>Evolution des technologies</h1>
+      <ul>
+        <li>années 2000 - Les images au format GIF permettent de faire des images animés.</li>
+        <li>années 2000 - Adobe Flash est le précurseur des animations un peu plus poussé.<br/>
+        Il est encore beaucoup utilisé<br/>
+          &rarr; Exemple de <a href="http://www.citroen.fr/home/#/univers-citroen/call-car-citroen/" target="_blank">citroen.fr</a>
+        </li>
+        <li>2007 - Silverlight, même concept made in Microsoft</li>
+        <li>...</li>
+        <li style="text-shadow: 1px 1px 3px white;">années 2010 - Les navigateurs sont maintenant plus puissants.<br/>HTML5 et CSS3, une alternative aux RIA ?</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h1>Deux solutions avec CSS 3</h1>
+      <ul>
+        <li>Les <strong>transitions</strong> (supportés sur tous les navigateurs modernes)<br/>
+        &rarr; <a href="http://www.w3.org/TR/css3-transitions">http://www.w3.org/TR/css3-transitions</a></li>
+        <li>Les <strong>animations</strong> (uniquement Webkit actuellement)<br/>
+        &rarr; <a href="http://www.w3.org/TR/css3-animations">http://www.w3.org/TR/css3-animations</a></li>
+      </ul>
+    </section>
+    
+    <section>
+      <h1>Quelques exemples</h1>
+    </section>
+    
+    <section>
+      <h1><a href="http://grenlibre.fr/demo/css3/transition/navbar/" target="_blank">Animation des menus</a></h1>
+    </section>    
+    
+    <section>
+      <h1><a href="http://grenlibre.fr/demo/css3/transition/slider/" target="_blank">Un diaporama d'images</a></h1>
+    </section> 
+    
+    <section>
       <h1>Application utilisant CSS 3</h1>
-      <iframe src="signe-chinois-notransition.html" width="800px" height="650px"></iframe>
+      <iframe src="signe-chinois-notransition.html" width="664px" height="515px"></iframe>
     </section>
     
     <section>
       <h1>CSS3 Transitions (exemple 1)</h1>
-      <iframe src="signe-chinois.html" width="800px" height="650px"></iframe>
+      <iframe src="signe-chinois.html" width="664px" height="515px"></iframe>
     </section>
     
     <section>
       <h1>CSS3 Transitions (exemple 2)</h1>
-      <iframe src="signe-chinois-2.html" width="800px" height="650px"></iframe>
+      <iframe src="signe-chinois-2.html" width="730px" height="600px"></iframe>
     </section>
     
     <section>
       <h1>CSS3 Transitions (exemple n)</h1>
-      <h2>Possibilités décuplés</h2>
+      <h2>Nombreuses possibilités</h2>
+    </section>
+    
+    <section>
+      <h1>Implémentation</h1>
+    </section>
+    
+    <section>
+      <h1>Identifier</h1>
+      <ul>
+        <li>Des états &rarr; sélecteur CSS</li>
+        <li>Des actions &rarr; exemple: :hover , :focus, ajout d'une classe...</li>
+      </ul>
+      <h1>Décrire</h1>
+      <ul>
+        <li>Le type de transition &rarr; transition-property</li>
+        <li>La durée de la transition &rarr; transition-duration</li>
+        <li>Le délai avant le début de transition &rarr; transition-delay</li>
+        <li>La variation de vitesse de la transition &rarr; transition-timing-function</li>
+      </ul>
+    </section>
+    
+    
+    <style>
+      #zone {
+        padding: 10px;
+        background: red;
+      }
+      #zone:hover {
+        background: blue;
+      }
+    </style>
+    
+    <section>
+      <h2>Exemple</h2>
+      <p>On veut changer la couleur d'une zone au passage de la souris</p>
+      
+      <div class="exemple">
+      <div class="demo">
+        <span id="zone">zone</span>
+      </div>
+<pre>#zone {
+  padding: 10px;
+  background: red;
+}
+#zone:hover {
+  background: blue;
+}</pre></div>
+    </section>
+    
+        <style>
+      #zone_2 {
+        padding: 10px;
+        background: red;
+        -moz-transition: 1s;
+      }
+      #zone_2:hover {
+        background: blue;
+      }
+    </style>
+    
+    <section>
+      <h2>Ajout de la propriété transition</h2>
+      
+      <div class="exemple">
+      <div class="demo">
+        <span id="zone_2">zone</span>
+      </div>
+<pre>#zone {
+  padding: 10px;
+  background: red;
+  transition: 1s;
+}
+#zone:hover {
+  background: blue;
+}
+</pre></div>
+    </section>
+    
+    <section>
+      <h1>Différents propriétés CSS</h1>
+      <ul>
+        <li>transition-property</li>
+        <li>transition-duration</li>
+        <li>transition-timing-function</li>
+        <li>transition-delay</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h1>transition-property</h1>
+      <p>Spécifie les propriétés CSS qui doivent être animés.</p>
+      
+      
+<pre>transition-property: color;
+transition-property: color, font-size;
+transition-property: all; /* défaut */</pre>
+    </section>
+    
+    <style>
+    #effectzone-duration {
+      margin: 20px;
+      border: 4px dashed white;
+      width: 600px;
+    }
+    #effectzone-duration span {
+      display: inline-block;
+      padding: 10px;
+      margin: 20px;
+      background: red;
+      margin-left: 2%;
+      width: 14%;
+    }  
+    #effectzone-duration:hover span {
+      background: green;
+      margin-left: 80%;
+    }
+    
+    #effectzone-duration #zone-1 {
+      -moz-transition-duration: 100ms;
+    }
+    #effectzone-duration #zone-2 {
+      -moz-transition-duration: 1s;
+    }
+    #effectzone-duration #zone-3 {
+      -moz-transition-duration: 3s;
+    }
+    </style>
+    
+    <section>
+      <h1>transition-duration</h1>
+      <p>Spécifie la durée de la transition.</p>
+      <div id="effectzone-duration">
+        <div><span id="zone-1">100ms</span></div>
+        <div><span id="zone-2">1s</span></div>
+        <div><span id="zone-3">3s</span></div>
+      </div>
+    </section>
+    
+    <section>
+      <h1>transition-timing-function</h1>
+    </section>
+    
+    <section>
+      <h1>transition-delay</h1>
     </section>
     
     <!--
@@ -202,9 +420,15 @@
       - translate
       - rotate
       - scale
-      => bonus: explication des matrix
+      &rarr; bonus: explication des matrix
     
     * rapide live demo
+    
+    * What's next ?
+     -> CSS Animation, uniquement supporté par Webkit pour l'instant 
+     permet de faire des animations plus générique 
+     en jouant sur la répétition, le temps, ...
+     Il est possible de définir des keyframes
     
     -->
     
