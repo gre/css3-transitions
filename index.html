@@ -359,12 +359,12 @@ transition-property: all; /* défaut */</pre>
       padding: 10px;
       margin: 20px;
       background: red;
-      margin-left: 2%;
-      width: 14%;
+      width: 50px;
+      -moz-transform: translate(0, 0);
     }  
     #effectzone-duration:hover span {
       background: green;
-      margin-left: 80%;
+      -moz-transform: translate(480px, 0);
     }
     
     #effectzone-duration #zone-1 {
@@ -388,12 +388,233 @@ transition-property: all; /* défaut */</pre>
       </div>
     </section>
     
+    
     <section>
       <h1>transition-timing-function</h1>
+      <p>Spécifie la courbe d'évolution de la transition au cours du temps.</p>
+      <div style="margin-top: 20px; background: white; display: inline-block;">
+        <img src="TimingFunction.png" />
+      </div>
+      <p><em>source: http://www.w3.org/TR/css3-transitions/</em></p>
+    </section>
+    
+    
+    <style>
+    #effectzone-timing {
+      margin: 20px;
+      border: 4px dashed white;
+      width: 600px;
+    }
+    #effectzone-timing span {
+      display: inline-block;
+      padding: 10px;
+      margin: 20px;
+      background: red;
+      width: 110px;
+      -moz-transform: translate(0, 0);
+      -moz-transition-duration: 2s;
+    }  
+    #effectzone-timing:hover span {
+      background: green;
+      -moz-transform: translate(420px, 0);
+    }
+    
+    #effectzone-timing #zone-1 {
+      -moz-transition-timing-function: ease;
+    }
+    #effectzone-timing #zone-2 {
+      -moz-transition-timing-function: linear;
+    }
+    #effectzone-timing #zone-3 {
+      -moz-transition-timing-function: cubic-bezier(0.5, 2, 1, 1);
+    }
+    #effectzone-timing #zone-4 {
+      -moz-transition-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    </style>
+    
+    <section>
+      <h1>transition-timing-function</h1>
+      <div id="effectzone-timing">
+        <div><span id="zone-1">ease</span></div>
+        <div><span id="zone-2">linear</span></div>
+        <div><span id="zone-3">1*</span></div>
+        <div><span id="zone-4">2*</span></div>
+      </div>
+      <ol>
+        <li>cubic-bezier(0.5, 2, 1, 1)</li>
+        <li>cubic-bezier(0, 1, 1, 0)</li>
+      </ol>
+    </section>
+    
+    <style>
+    #effectzone-delay {
+      margin: 20px;
+      border: 4px dashed white;
+      width: 600px;
+    }
+    #effectzone-delay span {
+      display: inline-block;
+      padding: 10px;
+      margin: 20px;
+      background: red;
+      width: 50px;
+      -moz-transform: translate(0, 0);
+      -moz-transition-duration: 2s;
+    }  
+    #effectzone-delay:hover span {
+      background: green;
+      -moz-transform: translate(480px, 0);
+    }
+    
+    #effectzone-delay #zone-1 {
+      -moz-transition-delay: 100ms;
+    }
+    #effectzone-delay #zone-2 {
+      -moz-transition-delay: 1s;
+    }
+    #effectzone-delay #zone-3 {
+      -moz-transition-delay: 3s;
+    }
+    </style>
+    <section>
+      <h1>transition-delay</h1>
+      <p>Spécifie le délai avant le début de la transition.</p>
+      <div id="effectzone-delay">
+        <div><span id="zone-1">100ms</span></div>
+        <div><span id="zone-2">1s</span></div>
+        <div><span id="zone-3">3s</span></div>
+      </div>
     </section>
     
     <section>
-      <h1>transition-delay</h1>
+      <h1>La propriété CSS transform</h1>
+      <p>permet de déplacer, zoomer et tourner un élément HTML.</p>
+    </section>
+    
+    <style>
+    .grid-container {
+      position: relative;
+      width: 322px;
+      height: 322px;
+      display: block;
+      background: white url(grid.png) repeat;
+    }
+    .grid-container img {
+      position: absolute;
+      top: 61px;
+      left: 51px;
+      opacity: 0.8;
+    }
+    
+    .grid-container.translate img {
+      -moz-transform: translate(-100px, 50px);
+    }
+    .grid-container.scale2 img {
+      -moz-transform: scale(2);
+    }
+    .grid-container.scale05 img {
+      -moz-transform: scale(0.5);
+    }
+    
+    .grid-container.rotate img {
+      -moz-transform: rotate(45deg);
+    }
+    
+    .grid-container.scale05-translate-rotate img {
+      -moz-transform: translate(-100px, 50px) scale(0.5) rotate(30deg);
+    }
+    .grid-container.skew img {
+      -moz-transform: skew(50deg);
+    }
+    
+    .grid-container.transition.rotate-scale img {
+      -moz-transition: 2s;
+      -moz-transform: rotate(1000deg) scale(0);
+    }
+    .grid-container.transition.rotate-scale:hover img {
+      -moz-transform: rotate(0deg) scale(1);
+    }
+    
+    .grid-container.transition:hover img {
+      -moz-transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    .grid-container.transition img {
+      -moz-transition: 1s;
+    }
+    </style>
+    <section>
+      <h1>Exemple</h1>
+      <div class="grid-container">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1>transform: translate(-100px, 50px);</h1>
+      <div class="grid-container translate">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1 style="margin-bottom: 50px;">transform: scale(2);</h1>
+      <div class="grid-container scale2">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1 style="margin-bottom: 50px;">transform: scale(2);</h1>
+      <div class="grid-container scale2">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1>transform: scale(0.5);</h1>
+      <div class="grid-container scale05">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1>transform: rotate(45deg);</h1>
+      <div class="grid-container rotate">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1>transform: skew(50deg);</h1>
+      <div class="grid-container skew">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <p>transform: translate(-100px, 50px) scale(0.5) rotate(30deg);</p>
+      <div class="grid-container scale05-translate-rotate">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h1>Ajout des transitions</h1>
+    </section>
+    
+    <section>
+      <p>transform: translate(-100px, 50px) scale(0.5) rotate(30deg);</p>
+      <div class="grid-container scale05-translate-rotate transition">
+        <img src="css3.png" />
+      </div>
+    </section>
+    
+    <section>
+      <h2>transform: rotate(1000deg) scale(0);</h2>
+      <div class="grid-container rotate-scale transition">
+        <img src="css3.png" />
+      </div>
     </section>
     
     <!--
