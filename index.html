@@ -91,6 +91,7 @@
           overflow: hidden;
           border: 1px solid black;
           -moz-box-shadow: 0px 0px 10px black;
+          -webkit-box-shadow: 0px 0px 10px black;
         }
         
         section h1, section h2, section p {
@@ -192,7 +193,7 @@
       <h2>Quel intérêt ?</h2>
       <p>
       Les animations apportent une dynamique à une application web.<br/>
-      Bien utilisés, ils augmente la qualité d'une Interface Utilisateur ergonomique.
+      Bien utilisés, ils augmente la qualité et l'ergonomie d'une Interface Utilisateur.
       </p>
       <!--
       <h2>Mais attention aux abus</h2>
@@ -205,11 +206,11 @@
       <ul>
         <li>années 2000 - Les images au format GIF permettent de faire des images animés.</li>
         <li>années 2000 - Adobe Flash est le précurseur des animations un peu plus poussé.<br/>
-        Il est encore beaucoup utilisé<br/>
-          &rarr; Exemple de <a href="http://www.citroen.fr/home/#/univers-citroen/call-car-citroen/" target="_blank">citroen.fr</a>
+        Il est encore beaucoup utilisé 
+        &rarr; Exemple de <a href="http://www.citroen.fr/home/#/univers-citroen/call-car-citroen/" target="_blank">citroen.fr</a>
         </li>
         <li>2006 - jQuery, facilite la réalisation d'animation en Javascript.</li>
-        <li>2007 - Silverlight, même concept made in Microsoft</li>
+        <li>2007 - Silverlight, Microsoft</li>
         <li>...</li>
         <li style="text-shadow: 1px 1px 3px white;">années 2010 - Les navigateurs sont maintenant plus puissants.<br/>HTML5 et CSS3, une alternative aux RIA ?</li>
       </ul>
@@ -310,6 +311,7 @@
         padding: 10px;
         background: red;
         -moz-transition: 1s;
+        -webkit-transition: 1s;
       }
       #zone_2:hover {
         background: blue;
@@ -367,19 +369,24 @@ transition-property: all; /* défaut */</pre>
       background: red;
       width: 50px;
       -moz-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
     }  
     #effectzone-duration:hover span {
       background: green;
+      -webkit-transform: translate(480px, 0);
       -moz-transform: translate(480px, 0);
     }
     
     #effectzone-duration #zone-1 {
+      -webkit-transition-duration: 100ms;
       -moz-transition-duration: 100ms;
     }
     #effectzone-duration #zone-2 {
+      -webkit-transition-duration: 1s;
       -moz-transition-duration: 1s;
     }
     #effectzone-duration #zone-3 {
+      -webkit-transition-duration: 3s;
       -moz-transition-duration: 3s;
     }
     </style>
@@ -419,23 +426,30 @@ transition-property: all; /* défaut */</pre>
       width: 110px;
       -moz-transform: translate(0, 0);
       -moz-transition-duration: 2s;
+      -webkit-transform: translate(0, 0);
+      -webkit-transition-duration: 2s;
     }  
     #effectzone-timing:hover span {
       background: green;
       -moz-transform: translate(420px, 0);
+      -webkit-transform: translate(420px, 0);
     }
     
     #effectzone-timing #zone-1 {
       -moz-transition-timing-function: ease;
+      -webkit-transition-timing-function: ease;
     }
     #effectzone-timing #zone-2 {
       -moz-transition-timing-function: linear;
+      -webkit-transition-timing-function: linear;
     }
     #effectzone-timing #zone-3 {
       -moz-transition-timing-function: cubic-bezier(0.5, 2, 1, 1);
+      -webkit-transition-timing-function: cubic-bezier(0.5, 2, 1, 1);
     }
     #effectzone-timing #zone-4 {
       -moz-transition-timing-function: cubic-bezier(0, 1, 1, 0);
+      -webkit-transition-timing-function: cubic-bezier(0, 1, 1, 0);
     }
     </style>
     
@@ -467,20 +481,26 @@ transition-property: all; /* défaut */</pre>
       width: 50px;
       -moz-transform: translate(0, 0);
       -moz-transition-duration: 2s;
+      -webkit-transform: translate(0, 0);
+      -webkit-transition-duration: 2s;
     }  
     #effectzone-delay:hover span {
       background: green;
       -moz-transform: translate(480px, 0);
+      -webkit-transform: translate(480px, 0);
     }
     
     #effectzone-delay #zone-1 {
       -moz-transition-delay: 100ms;
+      -webkit-transition-delay: 100ms;
     }
     #effectzone-delay #zone-2 {
       -moz-transition-delay: 1s;
+      -webkit-transition-delay: 1s;
     }
     #effectzone-delay #zone-3 {
       -moz-transition-delay: 3s;
+      -webkit-transition-delay: 3s;
     }
     </style>
     <section>
@@ -514,38 +534,49 @@ transition-property: all; /* défaut */</pre>
     }
     
     .grid-container.translate img {
+      -webkit-transform: translate(-100px, 50px);
       -moz-transform: translate(-100px, 50px);
     }
     .grid-container.scale2 img {
+      -webkit-transform: scale(2);
       -moz-transform: scale(2);
     }
     .grid-container.scale05 img {
+      -webkit-transform: scale(0.5);
       -moz-transform: scale(0.5);
     }
     
     .grid-container.rotate img {
+      -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
     }
     
     .grid-container.scale05-translate-rotate img {
+      -webkit-transform: translate(-100px, 50px) scale(0.5) rotate(30deg);
       -moz-transform: translate(-100px, 50px) scale(0.5) rotate(30deg);
     }
     .grid-container.skew img {
+      -webkit-transform: skew(50deg);
       -moz-transform: skew(50deg);
     }
     
     .grid-container.transition.rotate-scale img {
+      -webkit-transition: 2s;
+      -webkit-transform: rotate(1000deg) scale(0);
       -moz-transition: 2s;
       -moz-transform: rotate(1000deg) scale(0);
     }
     .grid-container.transition.rotate-scale:hover img {
+      -webkit-transform: rotate(0deg) scale(1);
       -moz-transform: rotate(0deg) scale(1);
     }
     
     .grid-container.transition:hover img {
+      -webkit-transform: translate(0, 0) scale(1) rotate(0deg);
       -moz-transform: translate(0, 0) scale(1) rotate(0deg);
     }
     .grid-container.transition img {
+      -webkit-transition: 1s;
       -moz-transition: 1s;
     }
     </style>
@@ -559,13 +590,6 @@ transition-property: all; /* défaut */</pre>
     <section>
       <h1>transform: translate(-100px, 50px);</h1>
       <div class="grid-container translate">
-        <img src="css3.png" />
-      </div>
-    </section>
-    
-    <section>
-      <h1 style="margin-bottom: 50px;">transform: scale(2);</h1>
-      <div class="grid-container scale2">
         <img src="css3.png" />
       </div>
     </section>
@@ -624,10 +648,95 @@ transition-property: all; /* défaut */</pre>
     </section>
     
     <section>
+      <h2>Implémentation du <a href="http://www.zengularity.com/item/1583389563/les-transitions-css3-un-exemple-de-diaporama-dimages">diaporama d'images</a></h2>
+    </section>
+    
+    <section>
+      <h2>Un peu de Javascript</h2>
+      <pre style="font-size: 0.5em;">var TIMEOUT_SLIDE = 4000;
+$('.slide-images').each(function() {
+  var slides = $('.slide-image', this);
+  
+  /// Slide Navigation ///
+  var currentSlideNum = 0;
+  var goToSlide = function(slideNum) {
+    slides.eq(currentSlideNum = slideNum).addClass('current').siblings().removeClass('current');
+  };
+  var nextSlide = function() {
+    goToSlide(currentSlideNum+1>=slides.size()-1 ? 0 : currentSlideNum+1);
+  };
+  var prevSlide = function() {
+    goToSlide(currentSlideNum<1 ? slides.size()-1 : currentSlideNum-1);
+  };
+  goToSlide(0);
+  
+  /// Navigation binding ///
+  $('.prevSlide').click(prevSlide);
+  $('.nextSlide').click(nextSlide);
+  
+  /// Auto Next Slide ///
+  var lastHumanNav = 0;
+  $('.prevSlide, .nextSlide, .slide-pager a').click(function(){
+    lastHumanNav = new Date().getTime();
+  });
+  setInterval(function() {
+    if(new Date().getTime() - lastHumanNav > TIMEOUT_SLIDE) /* human interact is prioritary */
+      nextSlide();
+  }, TIMEOUT_SLIDE);
+});</pre>
+    </section>
+    
+    <section>
+      <h2>Et un peu de CSS...</h2>
+      <pre style="font-size: 0.5em;">.slide-images .slide-image,
+.slide-images .slide-image img {
+  transition-duration: 1.5s;
+}
+
+.slide-images.myOwnTransition .slide-image {
+  opacity: 0;
+}
+.slide-images.myOwnTransition .slide-image.current {
+  opacity: 1;
+}
+.slide-images.myOwnTransition .slide-image img {
+  transform: scale(2);
+}
+.slide-images.myOwnTransition .slide-image.current img {
+  transform: scale(1);
+}</pre>
+    </section>
+    
+    <section>
+      <h1>Et voilà...</h1>
+      <iframe src="http://grenlibre.fr/demo/css3/transition/slider/" style="width: 600px; height: 320px; overflow: hidden; background: white;"></iframe>
+    </section>
+    
+    <style>
+    #lastslide {
+      -moz-transform: scale(0) rotate(360deg);
+      -webkit-transform: scale(0) rotate(360deg);
+    }
+    #lastslide[aria-selected] {
+      -moz-transform: scale(1) rotate(0deg);
+      -moz-transition-duration: 2s;
+      -webkit-transform: scale(1) rotate(0deg);
+      -webkit-transition-duration: 2s;
+    }
+    </style>
+    <section id="lastslide">
       <h2>Des questions ?</h2>
       <br/>
-      <p>Retrouvez cette présentation sur <a href="http://gre.github.com/css3-transitions/">http://gre.github.com/css3-transitions/</a></p>
-      <p>Le diaporama d'images est détaillé dans une vidéo sur <a href="http://www.zengularity.com/item/1583389563/les-transitions-css3-un-exemple-de-diaporama-dimages">http://zengularity.com/</a></p>
+      <div>
+        <h4>A propos</h4>
+        <ul style="font-size: 0.7em;">
+          <li>Retrouvez cette présentation sur <a href="http://gre.github.com/css3-transitions/">http://gre.github.com/css3-transitions/</a></li>
+          <li>Le diaporama d'images est détaillé dans une vidéo sur <a href="http://www.zengularity.com/item/1583389563/les-transitions-css3-un-exemple-de-diaporama-dimages">http://zengularity.com/</a></li>
+          <li>Cette présentation était en CSS3 Transitions.</li>
+          <li>L'annonce animée sur la télévision l'est aussi.</li>
+          <li>Now, it's up to YOU !</li>
+        </ul>
+      </div>
     </section>
     
     <!--
