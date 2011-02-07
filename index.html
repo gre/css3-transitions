@@ -657,7 +657,6 @@ transition-property: all; /* défaut */</pre>
 $('.slide-images').each(function() {
   var slides = $('.slide-image', this);
   
-  /// Slide Navigation ///
   var currentSlideNum = 0;
   var goToSlide = function(slideNum) {
     slides.eq(currentSlideNum = slideNum).addClass('current').siblings().removeClass('current');
@@ -670,11 +669,9 @@ $('.slide-images').each(function() {
   };
   goToSlide(0);
   
-  /// Navigation binding ///
   $('.prevSlide').click(prevSlide);
   $('.nextSlide').click(nextSlide);
   
-  /// Auto Next Slide ///
   var lastHumanNav = 0;
   $('.prevSlide, .nextSlide, .slide-pager a').click(function(){
     lastHumanNav = new Date().getTime();
