@@ -654,10 +654,10 @@ transition-property: all; /* défaut */</pre>
     
     <section>
       <h2>Un peu de Javascript</h2>
-      <pre style="font-size: 0.5em;">
-  var currentSlideNum = 0;
-  var goToSlide = function(slideNum) {
-    slides.eq(currentSlideNum = slideNum).addClass('current').siblings().removeClass('current');
+      <pre style="font-size: 0.8em;">
+  var current = 0;
+  var goToSlide = function(n) {
+    slides.eq(current=n).addClass('current').siblings().removeClass('current');
   };
   
   var nextSlide = function() { ... };
