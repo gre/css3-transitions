@@ -204,7 +204,7 @@
     <section>
       <h1>Evolution des technologies</h1>
       <ul>
-        <li>années 2000 - Les images au format GIF permettent de faire des images animées.</li>
+        <li>avant 2000 - Les images au format GIF permettent de faire des images animées.</li>
         <li>années 2000 - Adobe Flash est le précurseur des animations un peu plus poussés.<br/>
         Il est encore beaucoup utilisé 
         &rarr; Exemple de <a href="http://www.citroen.fr/home/#/univers-citroen/call-car-citroen/" target="_blank">citroen.fr</a>
@@ -328,10 +328,11 @@
 <pre>#zone {
   padding: 10px;
   background: red;
-  transition: 1s;
+  transition-duration: 1s;
 }
 #zone:hover {
   background: blue;
+  transition-duration: 1s;
 }
 </pre></div>
     </section>
@@ -653,33 +654,15 @@ transition-property: all; /* défaut */</pre>
     
     <section>
       <h2>Un peu de Javascript</h2>
-      <pre style="font-size: 0.5em;">var TIMEOUT_SLIDE = 4000;
-$('.slide-images').each(function() {
-  var slides = $('.slide-image', this);
-  
+      <pre style="font-size: 0.5em;">
   var currentSlideNum = 0;
   var goToSlide = function(slideNum) {
     slides.eq(currentSlideNum = slideNum).addClass('current').siblings().removeClass('current');
   };
-  var nextSlide = function() {
-    goToSlide(currentSlideNum+1>=slides.size()-1 ? 0 : currentSlideNum+1);
-  };
-  var prevSlide = function() {
-    goToSlide(currentSlideNum<1 ? slides.size()-1 : currentSlideNum-1);
-  };
-  goToSlide(0);
   
-  $('.prevSlide').click(prevSlide);
-  $('.nextSlide').click(nextSlide);
+  var nextSlide = function() { ... };
   
-  var lastHumanNav = 0;
-  $('.prevSlide, .nextSlide, .slide-pager a').click(function(){
-    lastHumanNav = new Date().getTime();
-  });
-  setInterval(function() {
-    if(new Date().getTime() - lastHumanNav > TIMEOUT_SLIDE) /* human interact is prioritary */
-      nextSlide();
-  }, TIMEOUT_SLIDE);
+  setInterval(nextSlide, 4000);
 });</pre>
     </section>
     
